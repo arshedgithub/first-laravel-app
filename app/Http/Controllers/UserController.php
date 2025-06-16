@@ -8,9 +8,9 @@ class UserController extends Controller
 {
     public function register(Request $request){
         $incomingFields = $request->validate([
-            "name" => "required",
-            "email" => "required",
-            "password" => "required"
+            "name" => ["required", "min:3", "max:10"],
+            "email" => ["required", "email"],
+            "password" => ["required", "min:8", "max:200"]
         ]);
         return "Hello from User Controller";
     }

@@ -10,6 +10,16 @@
 
     <div>My First Laravel Project</div>
 
+    @auth
+    
+    <p>Congrats You are logged in</p>
+    <form action="/logout" method="post">
+        @csrf
+        <button>Logout</button>
+    </form>
+
+    @else
+
     <form action="/register" method="POST">
         @csrf
         <input name="name" type="text" placeholder="name">
@@ -17,5 +27,8 @@
         <input name="password" type="password" placeholder="password">
         <button>Register</button>
     </form>
+
+    @endauth
+
 </body>
 </html>

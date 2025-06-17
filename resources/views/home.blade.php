@@ -18,6 +18,16 @@
         <button>Logout</button>
     </form>
 
+    <h2>Create Post</h2>
+    <form action="/create-post" method="post">
+        @csrf
+        <input type="text" name="title" placeholder="title">
+        <br><br>
+        <textarea name="body" rows="10" placeholder="body content..."></textarea>
+        <br><br>
+        <button>save</button>
+    </form>
+
     @else
 
     <div>
